@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+int dayno;
+printf("Enter the day number:");
+scanf("%d",&dayno);
+switch(dayno)
+{
+case 01:printf("Its Sunday");
+break;
+case 02:printf("Its Monday");
+break;
+case 03:printf("Its Tuesday");
+break;
+case 04:printf("Its Wednesday");
+break;
+case 05:printf("Its Thursday");
+break;
+case 06:printf("Its Friday");
+break;
+case 07:printf("Its Saturday");
+break;
+default:printf("Invalid input");
+}
+getch();
+return(0);
+}
