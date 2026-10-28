@@ -1,0 +1,40 @@
+#include<stdio.h>
+long power(long base, long exp) {
+	long result = 1;
+	for (long i = 0; i < exp; i++)
+		result *= base;
+	return result;
+}
+long isArmstrong(long num) {
+	long original = num, digits = 0, sum = 0,temp;
+
+	temp = num;
+	while (temp > 0) {
+		digits++;
+		temp /= 10;
+	}
+
+	temp = num;
+	while (temp > 0) {
+		long d = temp % 10;
+		sum += power(d, digits);
+		temp /= 10;
+	}
+	return sum == original;
+}
+int main() {
+	long low, high, i;
+
+	printf("Enter the lower limit: ");
+	scanf("%ld",&low);
+	printf("Enter the upper limit: ");
+	scanf("%ld",&high);
+
+	printf("Armstrong number between %ld and %ld are:\n",low,high);
+	for (i = low; i <= high; i++) {
+		if (i > 0 && isArmstrong(i))
+			printf("%ld ",i);
+	}
+	printf("\n");
+	return 0;
+}
